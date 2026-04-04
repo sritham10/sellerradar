@@ -1,0 +1,6 @@
+{
+    "sparkSubmit": {
+        "entryPoint": "s3://sellerradar-scripts-sritham/jobs/bronze_to_silver.py",
+        "sparkSubmitParameters": "--conf spark.jars=/usr/share/aws/iceberg/lib/iceberg-spark3-runtime.jar --conf spark.hadoop.hive.metastore.client.factory.class=com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+    }
+}

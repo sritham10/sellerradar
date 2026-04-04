@@ -1,0 +1,130 @@
+============================================================
+SellerRadar — Bronze to Silver Transformation
+Started: 2026-04-04T11:06:05.726791+00:00
+============================================================
+
+Step 1: Reading Bronze data from s3://sellerradar-bronze-sritham/raw/amazon/
+Total raw records found: 99
+root
+ |-- asin: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- in_stock: string (nullable = true)
+ |-- price: double (nullable = true)
+ |-- rating: double (nullable = true)
+ |-- reviews_count: long (nullable = true)
+ |-- scraped_at: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- title: string (nullable = true)
+
+
+Step 2: Full 6-Pillar Data Quality Report
+============================================================
+
+Pillar 1 — Completeness:
+  Total records:        99
+  Null prices:          2
+  Null ratings:         9
+  Null titles:          0
+  Null in_stock:        2
+  Null categories:      0
+  Null scraped_at:      0
+  Completeness score:   97.98%
+
+Pillar 2 — Validity:
+  Invalid prices (<=0):         0
+  Invalid ratings (out of 0-5): 0
+  Suspicious prices:            0
+  Validity score:               100.0%
+
+Pillar 3 — Uniqueness:
+  Total asin+timestamp combos:    99
+  Distinct asin+timestamp combos: 99
+  Duplicate records:              0
+  Uniqueness score:               100.0%
+
+Pillar 4 — Consistency:
+  Distinct ASINs:               11
+  Expected ASINs:               11
+  ASIN count correct:           True
+  Distinct sources:             1 (expected: 1)
+  Consistency score:            100.0%
+
+Pillar 5 — Accuracy:
+  Price range:  799.0 — 8499.0
+  Avg price:    3254.46
+  Rating range: 3.5 — 4.6
+  Avg rating:   4.12
+  Accuracy score: 100.0%
+
+Pillar 6 — Timeliness:
+  Earliest scrape:      2026-04-01T15:15:57.107993+00:00
+  Latest scrape:        2026-04-02T19:01:14.272767+00:00
+  Distinct scrape runs: 99
+  Timeliness score:     100.0%
+
+============================================================
+OVERALL DATA QUALITY SCORE: 99.49%
+Completeness:  97.98%  (weight: 25%)
+Validity:      100.0%  (weight: 25%)
+Uniqueness:    100.0%  (weight: 20%)
+Consistency:   100.0%  (weight: 15%)
+Accuracy:      100.0%  (weight: 10%)
+Timeliness:    100.0%  (weight:  5%)
+============================================================
+
+Step 3: Applying transformations...
+
+Step 4: Post-Transformation Quality Summary
+Total silver records:  99
+Valid records:         97
+Invalid records:       2
+Valid percentage:      97.98%
++-------------+-----+
+|    dq_status|count|
++-------------+-----+
+|        VALID|   97|
+|INVALID_PRICE|    2|
++-------------+-----+
+
++----------+------------------------------------------------------------+------+------+---------+-----------+
+|      asin|                                                       title| price|rating|dq_status|scrape_date|
++----------+------------------------------------------------------------+------+------+---------+-----------+
+|B0GKJ1DJRX|acer GlowTime Alarm Clock Bluetooth Speaker with 15W Wire...|2599.0|   3.5|    VALID| 2026-04-01|
+|B0GKJ1DJRX|acer GlowTime Alarm Clock Bluetooth Speaker with 15W Wire...|2599.0|   3.5|    VALID| 2026-04-02|
+|B0GKJ1DJRX|acer GlowTime Alarm Clock Bluetooth Speaker with 15W Wire...|2599.0|   3.5|    VALID| 2026-04-02|
+|B0GKJ1DJRX|acer GlowTime Alarm Clock Bluetooth Speaker with 15W Wire...|2599.0|   3.5|    VALID| 2026-04-02|
+|B0GKJ1DJRX|acer GlowTime Alarm Clock Bluetooth Speaker with 15W Wire...|2599.0|   3.5|    VALID| 2026-04-02|
++----------+------------------------------------------------------------+------+------+---------+-----------+
+only showing top 5 rows
+
+
+Step 5: Creating Iceberg table in Glue catalog...
+Iceberg table created or already exists
+
+Step 6: Writing to Silver Iceberg table...
+Successfully wrote 99 records to Silver
+
+Step 7: SQL Verification
++----------+---------+---------+---------+-----------------+-------------+-------------+
+|asin      |min_price|max_price|avg_price|price_range      |total_scrapes|latest_scrape|
++----------+---------+---------+---------+-----------------+-------------+-------------+
+|B097D69GJ1|999.0    |999.0    |999.0    |0.0              |10           |2026-04-02   |
+|B0GKJ1DJRX|2599.0   |2599.0   |2599.0   |0.0              |10           |2026-04-02   |
+|B09NCFVNK9|1499.0   |1499.0   |1499.0   |0.0              |10           |2026-04-02   |
+|B0CH3G9VR2|999.0    |1318.9   |1070.09  |319.9000000000001|9            |2026-04-02   |
+|B0D772K8X8|799.0    |799.0    |799.0    |0.0              |9            |2026-04-02   |
+|B0GS6L79VS|1399.0   |1399.0   |1399.0   |0.0              |9            |2026-04-02   |
+|B0D6W7F7WH|1699.0   |1868.9   |1736.76  |169.9000000000001|9            |2026-04-02   |
+|B09HGSCL9Q|8499.0   |8499.0   |8499.0   |0.0              |9            |2026-04-02   |
+|B0CNXW42H8|5999.0   |5999.0   |5999.0   |0.0              |8            |2026-04-02   |
+|B0FLYDHYY4|4599.0   |4999.0   |4665.67  |400.0            |8            |2026-04-02   |
+|B0CN3D7CL2|8399.0   |8399.0   |8399.0   |0.0              |8            |2026-04-02   |
++----------+---------+---------+---------+-----------------+-------------+-------------+
+
+
+============================================================
+Bronze to Silver transformation COMPLETE
+Overall DQ Score: 99.49%
+Finished: 2026-04-04T11:06:50.105083+00:00
+Data is now queryable in AWS Athena
+============================================================

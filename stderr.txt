@@ -1,0 +1,57 @@
+Files  file:///usr/share/aws/iceberg/lib/iceberg-spark-runtime-3.4_2.12-1.4.0-amzn-0.jar from /usr/share/aws/iceberg/lib/iceberg-spark-runtime-3.4_2.12-1.4.0-amzn-0.jar to /home/hadoop/./iceberg-spark-runtime-3.4_2.12-1.4.0-amzn-0.jar
+26/04/04 10:38:17 INFO SparkContext: Running Spark version 3.4.1-amzn-2
+26/04/04 10:38:17 INFO ResourceUtils: ==============================================================
+26/04/04 10:38:17 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/04/04 10:38:17 INFO ResourceUtils: ==============================================================
+26/04/04 10:38:17 INFO SparkContext: Submitted application: SellerRadar-BronzeToSilver
+26/04/04 10:38:17 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 4, script: , vendor: , memory -> name: memory, amount: 14336, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/04/04 10:38:17 INFO ResourceProfile: Limiting resource is cpus at 4 tasks per executor
+26/04/04 10:38:17 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/04/04 10:38:18 INFO SecurityManager: Changing view acls to: hadoop
+26/04/04 10:38:18 INFO SecurityManager: Changing modify acls to: hadoop
+26/04/04 10:38:18 INFO SecurityManager: Changing view acls groups to: 
+26/04/04 10:38:18 INFO SecurityManager: Changing modify acls groups to: 
+26/04/04 10:38:18 INFO SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users with view permissions: hadoop; groups with view permissions: EMPTY; users with modify permissions: hadoop; groups with modify permissions: EMPTY
+26/04/04 10:38:18 INFO Utils: Successfully started service 'sparkDriver' on port 41349.
+26/04/04 10:38:18 INFO SparkEnv: Registering MapOutputTracker
+26/04/04 10:38:18 INFO SparkEnv: Registering BlockManagerMaster
+26/04/04 10:38:18 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/04/04 10:38:18 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/04/04 10:38:18 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/04/04 10:38:18 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-9508edb0-8df5-4a59-8fd3-cc162d3f64ff
+26/04/04 10:38:18 INFO MemoryStore: MemoryStore started with capacity 7.3 GiB
+26/04/04 10:38:18 INFO SparkEnv: Registering OutputCommitCoordinator
+26/04/04 10:38:18 INFO SubResultCacheManager: Sub-result caches are disabled.
+26/04/04 10:38:18 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/04/04 10:38:18 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/04/04 10:38:18 INFO SparkContext: Added JAR file:/usr/share/aws/iceberg/lib/iceberg-spark-runtime-3.4_2.12-1.4.0-amzn-0.jar at spark://[2406:da1a:b35:f300:6633:ebea:8b59:79cd]:41349/jars/iceberg-spark-runtime-3.4_2.12-1.4.0-amzn-0.jar with timestamp 1775299097876
+26/04/04 10:38:19 INFO Utils: Using initial executors = 3, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+26/04/04 10:38:19 INFO ExecutorContainerAllocator: Set total expected execs to {0=3}
+26/04/04 10:38:19 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45197.
+26/04/04 10:38:19 INFO NettyBlockTransferService: Server created on [2406:da1a:b35:f300:6633:ebea:8b59:79cd]:45197
+26/04/04 10:38:19 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/04/04 10:38:19 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, [2406:da1a:b35:f300:6633:ebea:8b59:79cd], 45197, None)
+26/04/04 10:38:19 INFO BlockManagerMasterEndpoint: Registering block manager [2406:da1a:b35:f300:6633:ebea:8b59:79cd]:45197 with 7.3 GiB RAM, BlockManagerId(driver, [2406:da1a:b35:f300:6633:ebea:8b59:79cd], 45197, None)
+26/04/04 10:38:19 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, [2406:da1a:b35:f300:6633:ebea:8b59:79cd], 45197, None)
+26/04/04 10:38:19 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, [2406:da1a:b35:f300:6633:ebea:8b59:79cd], 45197, None)
+26/04/04 10:38:19 INFO ExecutorContainerAllocator: Going to request 3 executors for ResourceProfile Id: 0, target: 3 already provisioned: 0.
+26/04/04 10:38:19 INFO TimeBasedRotatingEventLogFilesWriter: rotationIntervalInSeconds = 300, eventFileMinSize = 1048576, maxFilesToRetain = 2
+26/04/04 10:38:19 INFO DefaultEmrServerlessRMClient: Creating containers with container role SPARK_EXECUTOR and keys: Set(1, 2, 3)
+26/04/04 10:38:19 INFO TimeBasedRotatingEventLogFilesWriter: Logging events to file:/var/log/spark/apps/eventlog_v2_00g4loapekqhtg1v/00g4loapekqhtg1v.inprogress
+26/04/04 10:38:19 INFO Utils: Using initial executors = 3, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+26/04/04 10:38:19 INFO ExecutorAllocationManager: Dynamic allocation is enabled without a shuffle service.
+26/04/04 10:38:19 INFO ExecutorContainerAllocator: Set total expected execs to {0=3}
+26/04/04 10:38:19 INFO DefaultEmrServerlessRMClient: Containers created with container role SPARK_EXECUTOR. key to container id map: Map(2 -> 12ceac08-a3b4-58e4-d8e9-298217a47a15, 1 -> 0eceac08-a3bd-2c89-4bc6-7270daabb94d, 3 -> 06ceac08-a3c4-d725-f54e-e36e66fa537a)
+26/04/04 10:38:23 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: No executor found for 2406:da1a:b35:f300:135e:da9:12ba:e9cd:39344
+26/04/04 10:38:23 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: No executor found for 2406:da1a:b35:f300:7936:7460:1069:7030:44724
+26/04/04 10:38:23 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (2406:da1a:b35:f300:135e:da9:12ba:e9cd:39358) with ID 1,  ResourceProfileId 0
+26/04/04 10:38:23 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (2406:da1a:b35:f300:7936:7460:1069:7030:44738) with ID 3,  ResourceProfileId 0
+26/04/04 10:38:23 INFO ExecutorMonitor: New executor 1 has registered (new total is 1)
+26/04/04 10:38:23 INFO ExecutorMonitor: New executor 3 has registered (new total is 2)
+26/04/04 10:38:23 INFO BlockManagerMasterEndpoint: Registering block manager [2406:da1a:b35:f300:135e:da9:12ba:e9cd]:34925 with 7.9 GiB RAM, BlockManagerId(1, [2406:da1a:b35:f300:135e:da9:12ba:e9cd], 34925, None)
+26/04/04 10:38:23 INFO BlockManagerMasterEndpoint: Registering block manager [2406:da1a:b35:f300:7936:7460:1069:7030]:39349 with 7.9 GiB RAM, BlockManagerId(3, [2406:da1a:b35:f300:7936:7460:1069:7030], 39349, None)
+26/04/04 10:38:24 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: No executor found for 2406:da1a:b35:f300:652e:5e46:5a45:93ea:41288
+26/04/04 10:38:24 INFO EmrServerlessClusterSchedulerBackend$EmrServerlessDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (2406:da1a:b35:f300:652e:5e46:5a45:93ea:41296) with ID 2,  ResourceProfileId 0
+26/04/04 10:38:24 INFO ExecutorMonitor: New executor 2 has registered (new total is 3)
+26/04/04 10:38:24 INFO EmrServerlessClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/04/04 10:38:24 INFO BlockManagerMasterEndpoint: Registering block manager [2406:da1a:b35:f300:652e:5e46:5a45:93ea]:40219 with 7.9 GiB RAM, BlockManagerId(2, [2406:da1a:b35:f300:652e:5e46:5a45:93ea], 40219, None)

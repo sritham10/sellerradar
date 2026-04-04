@@ -1,0 +1,7 @@
+{
+    "monitoringConfiguration": {
+        "s3MonitoringConfiguration": {
+            "logUri": "s3://sellerradar-emr-logs-sritham/"
+        }
+    }
+}
