@@ -1,0 +1,9 @@
+{
+    "BucketName": "sellerradar-bronze-sritham",
+    "BucketFolder": "cdc/seller_data",
+    "ServiceAccessRoleArn": "arn:aws:iam::253025918226:role/sellerradar-dms-s3-role",
+    "DataFormat": "csv",
+    "TimestampColumnName": "dms_timestamp",
+    "IncludeOpForFullLoad": true,
+    "CdcInsertsAndUpdates": true
+}
